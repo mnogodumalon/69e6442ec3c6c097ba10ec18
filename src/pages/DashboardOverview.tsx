@@ -17,6 +17,7 @@ import {
   IconPlus, IconPencil, IconTrash, IconDoor, IconCat,
   IconCalendarCheck, IconCalendarClock, IconBuildingCottage,
   IconCurrencyEuro, IconArrowRight, IconArrowLeft,
+  IconChevronRight, IconClipboardList,
 } from '@tabler/icons-react';
 
 const APPGROUP_ID = '69e6442ec3c6c097ba10ec18';
@@ -139,6 +140,30 @@ export default function DashboardOverview() {
 
   return (
     <div className="space-y-6">
+      {/* ── Workflow Navigation ────────────────────────────────────── */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <a href="#/intents/neue-buchung" className="flex items-center gap-4 bg-card border border-border border-l-4 border-l-primary rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+          <div className="shrink-0 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+            <IconCalendarCheck size={20} className="text-primary" />
+          </div>
+          <div className="flex-1 min-w-0">
+            <p className="font-semibold text-sm text-foreground truncate">Neue Buchung anlegen</p>
+            <p className="text-xs text-muted-foreground truncate">Kunde, Katzen, Zimmer & Leistungen in einem Schritt buchen</p>
+          </div>
+          <IconChevronRight size={16} className="text-muted-foreground shrink-0" />
+        </a>
+        <a href="#/intents/tagesprotokoll" className="flex items-center gap-4 bg-card border border-border border-l-4 border-l-primary rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+          <div className="shrink-0 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+            <IconClipboardList size={20} className="text-primary" />
+          </div>
+          <div className="flex-1 min-w-0">
+            <p className="font-semibold text-sm text-foreground truncate">Tagesprotokoll erfassen</p>
+            <p className="text-xs text-muted-foreground truncate">Gesundheitsstatus aller eingecheckten Katzen dokumentieren</p>
+          </div>
+          <IconChevronRight size={16} className="text-muted-foreground shrink-0" />
+        </a>
+      </div>
+
       {/* ── KPI Cards ─────────────────────────────────────────────── */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
         <StatCard
